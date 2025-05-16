@@ -3,7 +3,7 @@ import 'package:arcore_flutter_plugin_example/screens/arViewScreen.dart';
 import 'package:flutter/material.dart';
 class itemListScreen extends StatelessWidget {
 
-  List<ItemModel> items= [
+  final List<ItemModel> items= [
     ItemModel(
       'Double Bed',
       'Double Bed with 2 Lamps',

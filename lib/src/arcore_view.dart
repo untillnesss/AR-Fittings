@@ -19,8 +19,8 @@ class ArCoreView extends StatefulWidget {
   final ArCoreViewType type;
 
   const ArCoreView(
-      {Key key,
-      @required this.onArCoreViewCreated,
+      {Key? key,
+      required this.onArCoreViewCreated,
 //    @required this.onArCoreUnsupported,
       this.enableTapRecognizer = false,
       this.enablePlaneRenderer = true,
@@ -59,9 +59,6 @@ class _ArCoreViewState extends State<ArCoreView> with WidgetsBindingObserver {
   }
 
   void _onPlatformViewCreated(int id) {
-    if (widget.onArCoreViewCreated == null) {
-      return;
-    }
     widget.onArCoreViewCreated(ArCoreController(
         id: id,
         enableTapRecognizer: widget.enableTapRecognizer,

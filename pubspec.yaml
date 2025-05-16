@@ -3,15 +3,15 @@ description: Flutter plugin for ARCore SDK, Android platform to build New Augmen
 version: 0.0.11
 
 environment:
-  sdk: '>=2.1.0 <3.0.0'
-  flutter: '>=1.10.0 <2.0.0'
+  sdk: ">=2.12.0 <4.0.0"
+  flutter: '>=3.10.0'
 
 dependencies:
   flutter:
     sdk: flutter
   vector_math: ^2.0.8
   meta: ^1.1.8
-  equatable: ^1.1.0
+  equatable: ^2.0.7
 
 dev_dependencies:
   flutter_test:

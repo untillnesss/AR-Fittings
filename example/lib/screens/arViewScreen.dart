@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:arcore_flutter_plugin/arcore_flutter_plugin.dart';
 import 'package:flutter/services.dart';
 import 'package:vector_math/vector_math_64.dart'as vector;
+
 class ARViewScreen extends StatefulWidget {
-  String itemImg;
-  ARViewScreen({this.itemImg});
+  final String itemImg;
+  
+  ARViewScreen({required this.itemImg});
 
 
   @override
@@ -12,7 +14,7 @@ class ARViewScreen extends StatefulWidget {
 }
 
 class _ARViewScreenState extends State<ARViewScreen> {
-  ArCoreController arCoreController;
+  late ArCoreController arCoreController;
 
   void whenARCoreViewCreated( ArCoreController controller){
     arCoreController= controller;
@@ -30,7 +32,7 @@ Future addItemImagetoScene(ArCoreHitTestResult hitTestResult) async{
       position: hitTestResult.pose.translation + vector.Vector3(0.0, 0.0, 0.0),
       rotation: hitTestResult.pose.rotation + vector.Vector4(0.0, 0.0, 0.0, 0.0),
     );
-    arCoreController.addArCoreNodeWithAnchor(imageItem);
+    arCoreController.addArCoreNodeWithAnchor(imageItem, parentNodeName: '');
 }
 
   @override
